@@ -1,6 +1,7 @@
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { api, buildUrl, type InsertOrder } from "@shared/routes";
 import { useToast } from "@/hooks/use-toast";
+import { fallbackProducts } from "@/lib/products";
 
 export function useProducts() {
   return useQuery({
@@ -17,11 +18,15 @@ export function useProduct(id: number) {
   return useQuery({
     queryKey: [api.products.get.path, id],
     queryFn: async () => {
-      const url = buildUrl(api.products.get.path, { id });
-      const res = await fetch(url);
-      if (res.status === 404) return null;
-      if (!res.ok) throw new Error("Failed to fetch product");
-      return api.products.get.responses[200].parse(await res.json());
+      try {
+        const url = buildUrl(api.products.get.path, { id });
+        const res = await fetch(url);
+        if (res.status === 404) return null;
+        if (!res.ok) throw new Error("Failed to fetch product");
+        return api.products.get.responses[200].parse(await res.json());
+      } catch (error) {
+        return fallbackProducts.find((item) => item.id === id) ?? null;
+      }
     },
     enabled: !isNaN(id),
   });
