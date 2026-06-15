@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Soft Cream Background */
+  --background: 60 15% 96%;
+  /* Deep Navy Foreground */
+  --foreground: 236 28% 14%;
+  
+  /* Rose Gold Primary */
+  --primary: 31 53% 64%;
+  --primary-foreground: 236 28% 14%;
+  
+  /* Lighter Navy Secondary */
+  --secondary: 236 20% 25%;
+  --secondary-foreground: 60 15% 96%;
+  
+  /* Card Background (White/Off-white) */
+  --card: 0 0% 100%;
+  --card-foreground: 236 28% 14%;
+  
+  /* Popover */
+  --popover: 0 0% 100%;
+  --popover-foreground: 236 28% 14%;
+  
+  /* Muted tones */
+  --muted: 60 5% 90%;
+  --muted-foreground: 236 10% 40%;
+  
+  /* Borders */
+  --border: 31 20% 85%; /* Subtle rose tint */
+  --input: 31 20% 85%;
+  
+  /* Ring for focus */
+  --ring: 31 53% 64%;
+  
+  /* Radius */
+  --radius: 0.25rem;
+  
+  /* Fonts */
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased font-sans selection:bg-primary/20 selection:text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-medium tracking-tight;
+  }
+}
+
+/* Custom Scrollbar for Luxury Feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.5);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}

@@ -1,0 +1,193 @@
+Create a complete, production-ready luxury diamond and engagement ring e-commerce website called "Ethereal Luxe" using React and Tailwind CSS.
+
+PROJECT SETUP:
+- Use React with functional components and hooks
+- Style with Tailwind CSS (already available in Replit)
+- Create a fully responsive design (mobile-first approach)
+- Single-page application with client-side routing (React Router)
+- All features must work without backend/database initially
+
+DESIGN SYSTEM:
+Colors:
+- Primary Dark: #1a1a2e (deep navy)
+- Accent: #d4a574 (rose gold)
+- Background: #f5f5f0 (soft cream)
+- Highlight: #e8d4b8 (champagne gold)
+- Text Dark: #2c2c2c
+- Text Light: #ffffff
+
+Typography:
+- Use Playfair Display for headings (luxury serif)
+- Use Inter or Poppins for body text
+- Import from Google Fonts
+
+REQUIRED PAGES & COMPONENTS:
+
+1. NAVBAR/HEADER:
+   - Logo "Ethereal Luxe" on left
+   - Navigation menu: Home, Collections, About, Contact
+   - Shopping cart icon (top right)
+   - Wishlist icon (top right)
+   - Search bar
+   - Responsive hamburger menu for mobile
+   - Sticky navigation on scroll
+
+2. HOMEPAGE:
+   - Full-screen hero section with:
+     * Beautiful gradient background (navy to rose gold)
+     * Centered heading: "Timeless Elegance, Eternal Luxury"
+     * Subheading: "Discover Our Exquisite Diamond Collections"
+     * Two CTA buttons: "Shop Now" (filled) and "Learn More" (outline)
+   - Featured Collections section showing 3-4 categories as cards
+   - Customer testimonials carousel with star ratings
+   - Newsletter signup section at bottom
+   - Footer with links, social media, contact info
+
+3. COLLECTIONS PAGE:
+   - Grid layout showing product cards (3 columns on desktop, 1 on mobile)
+   - Filter sidebar on left with options:
+     * Collection type (Engagement, Wedding, Fashion)
+     * Price range slider ($500 - $50,000)
+     * Metal type (Gold, Platinum, Silver)
+     * Diamond carat weight
+   - Each product card displays:
+     * Product image with hover zoom effect
+     * Product name
+     * Price
+     * Star rating
+     * Quick "Add to Cart" button
+     * Heart icon to add to wishlist
+   - Product grid should update when filters change
+   - Show total products count
+
+4. PRODUCT DETAIL PAGE:
+   - Left side: Large product image with thumbnail gallery below
+   - Right side:
+     * Product name (large, elegant font)
+     * Price display
+     * Star rating and review count
+     * Product specifications table:
+       - Carat Weight
+       - Color
+       - Clarity
+       - Cut
+       - Metal Type
+     * Customization options:
+       - Metal selector dropdown (Gold, Platinum, Silver)
+       - Size selector (numbers 1-13)
+     * Quantity selector
+     * "Add to Cart" button (large, rose gold color)
+     * "Add to Wishlist" button (outline)
+     * Description paragraph
+     * Related products carousel at bottom
+     * Reviews section with sample reviews
+
+5. CART PAGE:
+   - Table showing cart items with columns: Product, Price, Quantity, Total
+   - Remove item button for each row
+   - Cart summary section:
+     * Subtotal
+     * Shipping (calculate based on total)
+     * Tax estimate
+     * Total price (highlighted)
+   - "Continue Shopping" button
+   - "Checkout" button (prominent)
+   - Empty cart message if no items
+
+6. CHECKOUT PAGE:
+   - Multi-step form:
+     * Step 1: Shipping Address (name, email, address, city, state, zip)
+     * Step 2: Shipping Method (Standard, Express, Overnight)
+     * Step 3: Payment (simulated - just show card form fields)
+   - Order summary on right side
+   - Progress indicator showing current step
+   - "Previous" and "Next" buttons
+   - "Place Order" button on final step
+   - Success message after completing (don't need real payment processing)
+
+7. FOOTER:
+   - Company info section
+   - Quick links (About, Contact, FAQ, Blog)
+   - Social media icons (Instagram, Facebook, Pinterest)
+   - Newsletter signup
+   - Copyright text
+
+STATE MANAGEMENT:
+- Use React Context API or useState for:
+  * Shopping cart items
+  * Wishlist items
+  * Filters
+  * Selected product
+  * User preferences
+
+SAMPLE DATA:
+Create mock product data with at least 12 products including:
+- Product ID, name, price, image (use placeholder images from Unsplash or similar)
+- Description, specifications, reviews
+- Stock status, rating, review count
+
+FEATURES TO IMPLEMENT:
+✓ Add/remove items from cart
+✓ Add/remove items from wishlist
+✓ Filter products by category, price, metal type
+✓ Search functionality (filter by product name)
+✓ Smooth page transitions and animations
+✓ Hover effects on buttons and product cards
+✓ Modal for quick product preview
+✓ Responsive design (test on mobile, tablet, desktop)
+✓ LocalStorage to persist cart and wishlist data
+✓ Form validation on checkout
+✓ Success message after order placement
+
+ANIMATIONS & MICRO-INTERACTIONS:
+- Fade-in animations when page loads
+- Smooth scroll behavior
+- Button hover effects (color change, slight scale increase)
+- Product card hover: Image zoom (1.05x) and shadow effect
+- Shopping cart badge animation when item added
+- Toast notifications for "Added to cart" and "Added to wishlist"
+- Loading spinner when page transitions
+
+STYLING GUIDELINES:
+- Use Tailwind utility classes
+- Create custom component styles with @apply if needed
+- Ensure proper spacing using Tailwind spacing scale
+- Use shadow utilities for depth
+- Implement hover and focus states
+- Mobile-first responsive design with Tailwind breakpoints (sm, md, lg, xl)
+
+CODE STRUCTURE:
+Create these files/folders:
+/src
+  /components
+    - Navbar.jsx
+    - Hero.jsx
+    - ProductCard.jsx
+    - ProductGrid.jsx
+    - Cart.jsx
+    - Footer.jsx
+    - etc.
+  /pages
+    - Home.jsx
+    - Collections.jsx
+    - ProductDetail.jsx
+    - CartPage.jsx
+    - Checkout.jsx
+  /context
+    - CartContext.jsx
+    - WishlistContext.jsx
+  /data
+    - products.js (mock data)
+  App.jsx
+  index.css (for Tailwind imports)
+
+START BY:
+1. Creating the basic file structure
+2. Setting up React Router for navigation
+3. Creating the mock product data
+4. Building the Navbar component
+5. Building the Homepage
+6. Then move to Collections and product detail pages
+7. Finally implement cart and checkout
+
+Build this as a complete, working e-commerce site. Make sure every page is fully functional and looks professional. Use high-quality design patterns and ensure smooth user experience throughout.
